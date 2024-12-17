@@ -1,1 +1,91 @@
-<h1>Formularios</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario PNC</title>
+    <link rel="icon" type="image/jpg" href="/Logo solo Accesos.jpg">
+    <link rel="stylesheet" href="/styles/indexstyle.css">
+</head>
+<body>
+    <header>
+        <div class="logos">
+            <img src="/Logo Accesos Blanco (para fondos de colores), 2023 (1).png" alt="Logo de la Empresa" class="logo">
+            <img src="/Automátika Blanco .png" alt="Logo de la Empresa" class="logo">
+            <img src="/trea.png" alt="Logo de la Empresa" class="logo">
+        </div>
+        <h1>Registro de Productos No Conformes</h1>
+    </header>
+    
+    <main>
+        <form id="pncForm">
+            <label for="pncNumber">Número de PNC o queja *</label>
+            <input type="text" id="pncNumber" name="pncNumber" required>
+
+            <label for="fecha">Fecha*</label>
+            <input type="text" id="fecha" name="fecha" required placeholder="DD/MM/YYYY">
+
+            <label for="kilometraje">Ingrese la cantidad de kilometros consumidos *</label>
+            <input type="number" id="kilometraje" name="kilometraje" required>
+
+            <label for="montoRepuestos">Monto utilizado para los repuestos o materiales *</label>
+            <input type="number" id="montoRepuestos" name="montoRepuestos" required>
+
+            <!-- Selección de mano de obra con checkboxes -->
+            <fieldset>
+                <legend>Seleccione Mano de Obra *</legend>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" class="manoObraCheckbox" value="operario"> Operario (5000 colones/hora)
+                    </label>
+                    <label>
+                        <input type="checkbox" class="manoObraCheckbox" value="ayudante"> Ayudante (3000 colones/hora)
+                    </label>
+                    <label>
+                        <input type="checkbox" class="manoObraCheckbox" value="jefatura"> Jefatura (7000 colones/hora)
+                    </label>
+                </div>
+            </fieldset>
+            <div id="manoObraDetalles"></div>
+
+            <!-- Viáticos -->
+            <label for="viaticos">Viáticos *</label>
+            <select id="viaticos" name="viaticos" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="hospedaje">Hospedaje</option>
+                <option value="alimentacion">Alimentación</option>
+                <option value="ambos">Ambos</option>
+            </select>
+            <div id="viaticosDetalles"></div>
+
+            <!-- Otros campos -->
+            <label for="oportunidadClientes">
+                Oportunidad de haber atendido a otros Clientes 
+                (Monto, en colones, que se pudo facturar mientras los equipos de trabajo realizaban estas actividades):
+            </label>
+            <input type="number" id="oportunidadClientes" name="oportunidadClientes" placeholder="Ingrese el monto">
+
+            <label for="personasReunion">Cantidad de personas en la reunión para resolver el PNC*</label>
+            <input type="number" id="personasReunion" name="personasReunion" required>
+
+            <label for="horasReunion">Cantidad de horas de la reunión para resolver el PNC*</label>
+            <input type="number" id="horasReunion" name="horasReunion" required>
+
+            <label for="supervisiones">Indique cuántas visitas de supervisión se llevaron a cabo para abordar el problema del PNC *</label>
+            <input type="number" id="supervisiones" name="supervisiones" required>
+            
+            <label for="asesorias">Indique cuántas visitas de asesoría se realizaron para resolver el problema del PNC *</label>
+            <input type="number" id="asesorias" name="asesorias" required>
+            
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    <footer id="footer">
+        <p>Todos los derechos reservados a Accesos Automáticos</p>
+            <img src="/LOGO_ISOTools.svg" alt="Logo de la Empresa" class="logo">
+    </footer>
+    
+    <script src="/js/submitForm.js"></script>
+</body>
+</html>
